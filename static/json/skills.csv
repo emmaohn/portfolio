@@ -1,0 +1,16 @@
+type, skill, displayTitle, imgName, stars
+development, javascript, JavaScript, javascript.png, 5 
+development, html, HTML, html.png, 5
+development, css, CSS, css.png, 5
+development, node, Node.js, node.png, 5
+development, react, React,js, react.png, 4
+development, svelte, Svelte/SvelteKit, svelte.png, 4
+development, next, Next.js, next.png, 4
+development, github, GitHub, github.png, 4
+development, prisma, Prisma, prisma.png, 4
+development, postgres, PostgreSQL, postgres.png, 3
+design, illustrator, Adobe Illustrator, illustrator.png, 5
+design, indesign, Adobe InDesign, indesign.png, 5
+design, figma, Figma, figma.png, 4
+design, affinitydesigner, Affinity Designer, affinitydesigner.png, 4
+design, photoshop, Adobe PhotoShop, photoshop.png, 3

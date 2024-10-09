@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "quote": "This girl CAN code...",
+    "quoter": "Levi",
+    "title": "Guy who codes"
+  },
+  {
+    "id": 2,
+    "quote": "Now THATs what I call coding",
+    "quoter": "Levi",
+    "title": "Software professional"
+  },
+  {
+    "id": 3,
+    "quote": "I have never seen anyone who can do more average coding than this guy",
+    "quoter": "Levi",
+    "title": "Understands a lot of code"
+  }
+]

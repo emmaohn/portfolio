@@ -1,0 +1,73 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dosis:wght@200..800&family=Fira+Code:wght@300..700&display=swap');
+
+// tailwind
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@mixin break($custom) {
+  @media (min-width: $custom) { @content; }
+}
+
+:root {
+  --light-text: #FFF5EE;
+  --light-background: #FFF5EE;
+  --dark-text: #8B4513;
+  --dark-background: #8B4513;
+  --accent-one: #FF79BC;
+  --accent-two: #B4B4FF;
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --2xl: 1536px;
+}
+
+html {
+  font-size: 18px;
+  color: var(--dark-text);
+  @include break(768px) {
+    font-size: 20px;
+  }
+}
+body {
+  background-color: var(--light-background);
+}
+main {
+  margin: 0 1.4em;
+  @include break(768px) {
+    margin: 0 2.6em;
+  }
+  @include break(1024px) {
+    margin: 0 5em;
+  }
+  @include break(1280px) {
+    margin: 0 10em;
+  }
+}
+
+body, p, a {
+  font-family: 'Dosis', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-family: 'Bagel Fat One', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  // margin-top: 1em;
+  margin-bottom: .2em;
+}
+h3, h4, h5, h6 {
+  font-family: 'Dosis', Georgia, 'Times New Roman', Times, serif;
+}
+h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h3, h4 {
+  font-family: 'Dosis', Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  text-transform: uppercase;
+}

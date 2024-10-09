@@ -1,0 +1,107 @@
+[
+  {
+    "type": "development",
+    "skill": "javascript",
+    "displayTitle": "JavaScript",
+    "imgName": "javascript.png",
+    "stars": 5
+  },
+  {
+    "type": "development",
+    "skill": "html",
+    "displayTitle": "HTML",
+    "imgName": "html.png",
+    "stars": 5
+  },
+  {
+    "type": "development",
+    "skill": "css",
+    "displayTitle": "CSS",
+    "imgName": "css.png",
+    "stars": 5
+  },
+  {
+    "type": "development",
+    "skill": "node",
+    "displayTitle": "Node.js",
+    "imgName": "node.png",
+    "stars": 5
+  },
+  {
+    "type": "development",
+    "skill": "react",
+    "displayTitle": "React.js",
+    "imgName": "react.png",
+    "stars": 4
+  },
+  {
+    "type": "development",
+    "skill": "svelte",
+    "displayTitle": "Svelte/SvelteKit",
+    "imgName": "svelte.png",
+    "stars": 4
+  },
+  {
+    "type": "development",
+    "skill": "next",
+    "displayTitle": "Next.js",
+    "imgName": "next.png",
+    "stars": 4
+  },
+  {
+    "type": "development",
+    "skill": "github",
+    "displayTitle": "GitHub",
+    "imgName": "github.png",
+    "stars": 4
+  },
+  {
+    "type": "development",
+    "skill": "prisma",
+    "displayTitle": "Prisma",
+    "imgName": "prisma.png",
+    "stars": 4
+  },
+  {
+    "type": "development",
+    "skill": "postgres",
+    "displayTitle": "PostgreSQL",
+    "imgName": "postgres.png",
+    "stars": 3
+  },
+  {
+    "type": "design",
+    "skill": "illustrator",
+    "displayTitle": "Adobe Illustrator",
+    "imgName": "illustrator.png",
+    "stars": 5
+  },
+  {
+    "type": "design",
+    "skill": "indesign",
+    "displayTitle": "Adobe InDesign",
+    "imgName": "indesign.png",
+    "stars": 5
+  },
+  {
+    "type": "design",
+    "skill": "figma",
+    "displayTitle": "Figma",
+    "imgName": "figma.png",
+    "stars": 4
+  },
+  {
+    "type": "design",
+    "skill": "affinitydesigner",
+    "displayTitle": "Affinity Designer",
+    "imgName": "affinitydesigner.png",
+    "stars": 4
+  },
+  {
+    "type": "design",
+    "skill": "photoshop",
+    "displayTitle": "Adobe PhotoShop",
+    "imgName": "photoshop.png",
+    "stars": 3
+  }
+]
