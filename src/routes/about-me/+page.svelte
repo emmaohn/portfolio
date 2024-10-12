@@ -35,9 +35,8 @@
 
 </script>
 
+<Header />
 <main>
-  <Header />
-
   <div class="about-me">
     <h2>About Me</h2>
     <div class="about-me_mobile">
@@ -89,8 +88,8 @@
   <button on:click={next}>Next!</button>
 
   <p>{index}</p>
-  <Footer />
 </main>
+<Footer />
 
 <style lang="scss">
   @mixin break($custom) {

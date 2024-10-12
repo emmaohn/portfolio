@@ -17,10 +17,10 @@
     <a href="https://www.pinterest.com/emmaohn00/"><img src="images/social/pinterest.svg" alt="Pinterest icon"></a>
   </div>
   <div class="socials_desktop">
-    <a href="https://www.linkedin.com/in/jojo-johnson/"><p>https://www.linkedin.com/in/jojo-johnson/</p><img src="images/social/linkedin.svg" alt="LinkedIn icon"></a>
-    <a href="https://www.behance.net/jojo-johnson/"><p>https://www.behance.net/jojo-johnson/</p><img src="images/social/behance.svg" alt="Behance icon"></a>
-    <a href="https://github.com/emmaohn/"><p>https://github.com/emmaohn/</p><img src="images/social/github.svg" alt="GitHub icon"></a>
-    <a href="https://www.pinterest.com/emmaohn00/"><p>https://www.pinterest.com/emmaohn00/</p><img src="images/social/pinterest.svg" alt="Pinterest icon"></a>
+    <a target="_blank" href="https://www.linkedin.com/in/jojo-johnson/"><p>https://www.linkedin.com/in/jojo-johnson/</p><img src="images/social/linkedin.svg" alt="LinkedIn icon"></a>
+    <a target="_blank" href="https://www.behance.net/jojo-johnson/"><p>https://www.behance.net/jojo-johnson/</p><img src="images/social/behance.svg" alt="Behance icon"></a>
+    <a target="_blank" href="https://github.com/emmaohn/"><p>https://github.com/emmaohn/</p><img src="images/social/github.svg" alt="GitHub icon"></a>
+    <a target="_blank" href="https://www.pinterest.com/emmaohn00/"><p>https://www.pinterest.com/emmaohn00/</p><img src="images/social/pinterest.svg" alt="Pinterest icon"></a>
   </div>
 </footer>
 

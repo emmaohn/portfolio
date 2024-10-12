@@ -19,10 +19,10 @@
     </nav>
     <nav class="hidden md:block">
       <ul class="desktop flex">
-        <a href="#skills"><li>Skills</li></a>
-        <a href="#projects"><li>Projects</li></a>
-        <a href="#about-me"><li>About Me</li></a>
-        <a href="#contact-me"><li>Contact</li></a>
+        <a href="/#skills"><li>Skills</li></a>
+        <a href="/#projects"><li>Projects</li></a>
+        <a href="/#about-me"><li>About Me</li></a>
+        <a href="/#contact-me"><li>Contact</li></a>
       </ul>
     </nav>
   </div>

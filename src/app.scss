@@ -34,7 +34,7 @@ html {
 body {
   background-color: var(--light-background);
 }
-main {
+main, header, footer {
   margin: 0 1.4em;
   @include break(768px) {
     margin: 0 2.6em;

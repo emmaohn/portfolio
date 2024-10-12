@@ -26,9 +26,8 @@
   let formMessage = "";
 </script>
 
+<Header />
 <main>
-  <Header />
-
   <!-- Mobile intro!! -->
   <div class="intro">
     <div class="title md:hidden">
@@ -212,9 +211,8 @@
       </form>
     </div>
   </a>
-
-  <Footer />
 </main>
+<Footer />
 
 <style lang="scss">
   @mixin break($custom) {
