@@ -2,15 +2,18 @@
   export let projectImg;
   export let projectName;
   export let projectDescription;
+  export let projectLink;
 </script>
 
-<div class="project-card">
-  <img src="/images/{projectImg}" alt="{projectName}">
-  <div class="project-card-description">
-    <h5>{projectName}</h5>
-    <p>{projectDescription}</p>
+<a href={projectLink} target="_blank">
+  <div class="project-card">
+    <img src="/images/{projectImg}" alt="{projectName}">
+    <div class="project-card-description">
+      <h5>{projectName}</h5>
+      <p>{projectDescription}</p>
+    </div>
   </div>
-</div>
+</a>
 
 <style lang="scss">
   .project-card {

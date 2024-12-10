@@ -2,6 +2,17 @@
   import Header from "../../components/Header.svelte";
   import ProjectCard from "../../components/ProjectCard.svelte";
   import Footer from "../../components/Footer.svelte";
+  import { onMount } from "svelte";
+
+  let devProjects = [];
+  let designProjects = [];
+  onMount(async () => {
+    const response = await fetch('/json/projects.json');
+    let projects = await response.json();
+    console.log(projects)
+    devProjects = projects.filter(project => project.type === "development");
+    designProjects = projects.filter(project => project.type === "design");
+  });
 </script>
 
 <Header />
@@ -12,18 +23,30 @@
       <h3>Development - Latest</h3>
       <section>
         <div><i class="icon-laptop3"></i></div>
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
+        {#each devProjects as project} 
+          <ProjectCard 
+            projectImg="projects/{project.img}"
+            projectName={project.name}
+            projectDescription={project.description}
+            projectLink={project.link}
+          />
+        {/each}
+        <!-- <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
+        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" /> -->
       </section>
     </div>
     <div class="projects-design">
       <h3>Design - Latest</h3>
       <section>
         <div><i class="icon-sketchbook3"></i></div>
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
-        <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
+        {#each designProjects as project} 
+          <ProjectCard 
+            projectImg="projects/{project.img}"
+            projectName={project.name}
+            projectDescription={project.description}
+            projectLink={project.link}
+          />
+        {/each}
       </section>
     </div>
   </div>

@@ -1,24 +1,19 @@
 <script>
   import Header from "../components/Header.svelte";
   import StarButton from "../components/StarButton.svelte";
-  import SkillStars from "../components/SkillStars.svelte";
   import ProjectCard from "../components/ProjectCard.svelte";
   import Footer from "../components/Footer.svelte";
   import { onMount } from "svelte";
 
   let devSkills = [];
-  let devSkills1 = [];
-  let devSkills2 = [];
   let designSkills = [];
   onMount(async () => {
     const response = await fetch('/json/skills.json');
     let skills = await response.json();
     console.log(skills)
     devSkills = skills.filter(skill => skill.type === "development");
-    devSkills1 = [devSkills[0], devSkills[1], devSkills[2], devSkills[3], devSkills[4]];
-    devSkills2 = [devSkills[5], devSkills[6], devSkills[7], devSkills[8], devSkills[9]];
     designSkills = skills.filter(skill => skill.type === "design");
-  })
+  });
 
   let formName = "";
   let formEmail = "";
@@ -56,7 +51,7 @@
       <StarButton 
         bgColor="--accent-one" 
         textColor="--light-text"
-        textAlignDesktop="left"
+        smallAlign="center"
         href="" 
         content="See more"
       />
@@ -69,28 +64,22 @@
   <a id="skills">
     <div class="skills">
       <h2>Skills/Tools</h2>
-      <div class="skills-and-stars">
+      <div class="skills-icons">
         <div>
           <h4>Development</h4>
-          <div>
-            <div>
-              {#each devSkills1 as skill}
-                <SkillStars imgSrc="/images/skills/{skill.imgName}" starAmount={skill.stars}/>
-              {/each}
-            </div>
-            <div>
-              {#each devSkills2 as skill}
-                <SkillStars imgSrc="/images/skills/{skill.imgName}" starAmount={skill.stars}/>
-              {/each}
-            </div>
+          <div class="flex flex-wrap">
+            {#each devSkills as skill}
+              <img src="/images/skills/{skill.imgName}" alt="{skill.imgName}">
+            {/each}
           </div>
         </div>
-    
         <div>
           <h4>Design</h4>
-          {#each designSkills as skill}
-            <SkillStars imgSrc="/images/skills/{skill.imgName}" starAmount={skill.stars}/>
-          {/each}
+          <div class="flex flex-wrap">
+            {#each designSkills as skill}
+              <img src="/images/skills/{skill.imgName}" alt="{skill.imgName}">
+            {/each}
+          </div>
         </div>
       </div>
     </div>
@@ -110,7 +99,7 @@
             <StarButton 
               bgColor="--light-background" 
               textColor="--accent-two" 
-              textAlignDesktop="left"
+              smallAlign="center"
               content="See More" 
               href="/projects" 
             />
@@ -126,8 +115,8 @@
             <!-- link to projects -->
             <StarButton 
               bgColor="--light-background" 
-              textColor="--accent-one" 
-              textAlignDesktop="left"
+              textColor="--accent-one"
+              smallAlign="center" 
               content="See More" 
               href="/projects" 
             />
@@ -168,6 +157,8 @@
           <StarButton 
             bgColor="--accent-one" 
             textColor="--light-text" 
+            smallAlign="center"
+            medAlign="center"
             content="More About Me" 
             href="/about-me" 
           />
@@ -201,8 +192,8 @@
           <StarButton 
             bgColor="--light-background" 
             textColor="--accent-two" 
-            textAlignDesktop="left"
-            content="Send" 
+            smallAlign="centers"
+            content="Send"
             href="mailto:emmaohn01@gmail.com?
                   &subject=Message%20to%20Jojo%20Johnson
                   &body=Name:%20{formName}%0AEmail:%20{formEmail}%0APhone:%20{formPhone}%0AMessage:%20{formMessage}" 
@@ -267,22 +258,35 @@
     h2 {
       color: var(--accent-one);
     }
-    &-and-stars {
+    &-icons {
       border: 6px solid var(--accent-one);
       border-radius: 25px;
       padding: 0 1em 1em 1em;
-
       @include break(640px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
-      @include break(1024px) {
-        grid-template-columns: 2fr 1fr;
+      // div div {
+      //   // justify-content: space-between;
+      // }
+      > div:first-child {
+        @include break(640px) {
+          margin-right: 1em;
+        }
       }
-      > div > div {
-        @include break(1024px) {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+      > div:nth-child(2) {
+        @include break(640px) {
+          margin-left: 1em;
+        }
+      }
+      img {
+        width: 50px;
+        margin-right: .8em;
+        margin-top: 1em;
+        @include break(768px) {
+          width: 60px;
+          margin-right: 1em;
+          margin-top: 1.2em;
         }
       }
       h4 {

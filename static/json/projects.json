@@ -1,0 +1,86 @@
+[
+  {
+    "type": "development",
+    "name": "Pyman",
+    "description": "A python hangman terminal game complete with animations!",
+    "link": "https://github.com/emmaohn/pyman",
+    "img": "pyman.jpeg"
+  },
+  {
+    "type": "development",
+    "name": "Teaminion",
+    "description": "A web version of the card game Dominion",
+    "link": "https://github.com/levi-wj/teaminion-4",
+    "img": "teaminion.jpeg"
+  },
+  {
+    "type": "development",
+    "name": "WebWiz",
+    "description": "A learning tool to teach complex JavaScript concepts",
+    "link": "https://github.com/levi-wj/ihack-2023",
+    "img": "webwiz.png"
+  },
+  {
+    "type": "development",
+    "name": "PLUMS",
+    "description": "A personal learning management system!",
+    "link": "https://plums-sigma.vercel.app/",
+    "img": "plums.jpeg"
+  },
+  {
+    "type": "development",
+    "name": "Every Day Better and Better",
+    "description": "A website redesign and revamp for a small business",
+    "link": "https://www.everydaybetterandbetter.com/",
+    "img": "edbab.png"
+  },
+  {
+    "type": "design",
+    "name": "Conceptual book cover",
+    "description": "Conceptual covers for Victor Hugo's Les Miserables",
+    "link": "https://www.behance.net/gallery/183833701/Conceptual-Book-Cover-(Les-Misrables-Victor-Hugo)",
+    "img": "conceptualbookcover.png"
+  },
+  {
+    "type": "design",
+    "name": "Typeface Advertisement Poster",
+    "description": "See the features and weights that come with the Bodoni font!",
+    "link": "https://www.behance.net/gallery/184198615/Typeface-Advertisement-Poster",
+    "img": "typefaceadvertisementposter.png"
+  },
+  {
+    "type": "design",
+    "name": "PSA Poster: Girls Belong in STEM",
+    "description": "A poster series highlighting the importance of girls in STEM",
+    "link": "https://www.behance.net/gallery/186428439/PSA-Poster-Girls-Belong-in-STEM",
+    "img": "girlsbelonginstem.png"
+  },
+  {
+    "type": "design",
+    "name": "Gift Booklet",
+    "description": "Explore the fun of unique typography!",
+    "link": "https://www.behance.net/gallery/186720939/Gift-Booklet",
+    "img": "giftbooklet.png"
+  },
+  {
+    "type": "design",
+    "name": "Don't Leaf Me Alone!",
+    "description": "An adventure into game asset and sprite design!",
+    "link": "https://www.behance.net/gallery/194155223/Dont-Leaf-Me-Alone",
+    "img": "dontleafmealone.jpeg"
+  },
+  {
+    "type": "design",
+    "name": "Post-its to Posters",
+    "description": "A poster series for daily affirmations!",
+    "link": "https://www.behance.net/gallery/209408655/From-Post-its-to-Posters",
+    "img": "postitstoposters.png"
+  },
+  {
+    "type": "design",
+    "name": "JojOS Style Stage",
+    "description": "An adventure through the magic of css",
+    "link": "https://stylestage-jojos.vercel.app/",
+    "img": "stylestage.png"
+  }
+]

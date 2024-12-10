@@ -1,37 +1,21 @@
 <script>
   import Header from "../../components/Header.svelte";
+  import Quote from "../../components/Quote.Svelte";
   import Footer from "../../components/Footer.svelte";
+  import { onMount } from "svelte";
 
-  // import { fade } from 'svelte/transition'
-  // import { onMount } from "svelte";	
-	// const carouselQuotes = [
-	// 	'https://picsum.photos/300/200?random=1',
-	// 	'https://picsum.photos/300/200?random=2',
-	// 	'https://picsum.photos/300/200?random=3'
-	// ]
-
-  // let carouselQuotes = [];
-  // onMount(async () => {
-  //   const response = await fetch('/json/quotes.json');
-  //   carouselQuotes = await response.json();
-  //   console.log(carouselQuotes)
-  // })
   let carouselQuotes = [];
-  async function fetchData() {
-    const res = await fetch('/json/quotes.json');
-    const data = await res.json();
-
-    if (res.ok) {
-      return data;
-    } else {
-      throw new Error(data);
-    }
-  }
+  onMount(async () => {
+    const response = await fetch('/json/quotes.json');
+    let quotes = await response.json();
+    console.log(quotes)
+    carouselQuotes = quotes;
+  });
 	
-	let index = 0
+	let currIndex = 0
 	
-	const next = () => index = (index + 1) % carouselQuotes.length
-  const back = () => index === 0 ? index = carouselQuotes.length - 1 : index = (index - 1) % carouselQuotes.length;
+	const next = () => currIndex = (currIndex + 1) % carouselQuotes.length
+  const back = () => currIndex === 0 ? currIndex = carouselQuotes.length - 1 : currIndex = (currIndex - 1) % carouselQuotes.length;
 
 </script>
 
@@ -59,35 +43,24 @@
     </div>
   </div>
 
-  <!-- <p bind:value="{index}">{carouselQuotes[index].quote}</p> -->
-  <!-- {#each carouselQuotes as quote} -->
-  <!-- {#each carouselQuotes as quote (index)} -->
-    <!-- <img transition:fade {src} alt="" />
-    	 -->
-    <!-- {carouselQuotes[0]} -->
-    <!-- <p>{console.log(carouselQuotes[index])}</p> -->
-    <!-- <p>{JSON.stringify(quote)}</p> -->
-  <!-- {/each} -->
-  {#await fetchData()}
-    <p>Waiting to load quotes!</p>
-  {:then quotes}
-    {carouselQuotes = quotes}
-    <p>{carouselQuotes[index].quote}</p>
-  {:catch error}
-    <p>{error.message}</p>
-  {/await}
-
-  <!-- {#each carouselQuotes as quote, index}
-    {#if index == currentCarouselIndex} -->
-      <!-- <img src={photo} /> -->
-      <!-- {quote}
+  
+  <div class="flex justify-between">
+    <button class="navigation-buttons" on:click={back}><p>&lt</p></button>
+    {#if carouselQuotes.length}
+      {#each carouselQuotes as quote, index}
+        {#if index == currIndex}
+          <!-- {quote.quote} -->
+          <Quote 
+            quote={quote.quote}
+            quoter={quote.quoter}
+            title={quote.title}
+          />
+        {/if}
+      {/each}
     {/if}
-  {/each} -->
+    <button class="navigation-buttons" on:click={next}><p>&gt</p></button>
+  </div>
 
-  <button on:click={back}>Back!</button>
-  <button on:click={next}>Next!</button>
-
-  <p>{index}</p>
 </main>
 <Footer />
 
@@ -126,6 +99,20 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
       }
+    }
+  }
+
+  .navigation-buttons {
+    display: inline-block;
+    // width: 100%;
+    margin: .6em 0;
+    p {
+      display: inline-block;
+      color: var(--accent-two);
+      // padding: .4em .8em;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 4em;
     }
   }
 </style>

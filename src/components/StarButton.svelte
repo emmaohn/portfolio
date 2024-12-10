@@ -1,19 +1,23 @@
 <script>
   export let bgColor = '--light-background';
   export let textColor = '--dark-text';
-  export let textAlignMobile = 'center';
-  export let textAlignDesktop = 'center';
+  export let smallAlign = "left";
+  export let medAlign = "left";
   export let href = '';
   export let content = '';
 </script>
 
-<a href="{href}" class="text-{textAlignMobile} md:text-{textAlignDesktop}">
+<a href="{href}" class="small-{smallAlign} med-{medAlign}">
   <p style="background-color: var({bgColor}); color: var({textColor});">
     {content} <i class="icon-star1"></i>
   </p>
 </a>
 
 <style lang="scss">
+  @mixin break($custom) {
+    @media (min-width: $custom) { @content; }
+  }
+
   a {
     display: block;
     width: 100%;
@@ -30,6 +34,22 @@
         margin-left: .4em;
         font-size: 1.2em;
       }
+    }
+  }
+  .small-left {
+    text-align: left;
+  }
+  .small-center {
+    text-align: center;
+  }
+  .med-left {
+    @include break(768px) {
+      text-align: left;
+    }
+  }
+  .med-center {
+    @include break(768px) {
+      text-align: center;
     }
   }
 </style>
