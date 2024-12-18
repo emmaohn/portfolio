@@ -1,6 +1,6 @@
 <script>
   import Header from "../../components/Header.svelte";
-  import Quote from "../../components/Quote.Svelte";
+  import Quote from "../../components/Quote.svelte";
   import Footer from "../../components/Footer.svelte";
   import { onMount } from "svelte";
 
