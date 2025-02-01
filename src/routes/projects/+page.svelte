@@ -25,7 +25,7 @@
         <div><i class="icon-laptop3"></i></div>
         {#each devProjects as project} 
           <ProjectCard 
-            projectImg="projects/{project.img}"
+            projectImg="{project.img}"
             projectName={project.name}
             projectDescription={project.description}
             projectLink={project.link}
@@ -41,7 +41,7 @@
         <div><i class="icon-sketchbook3"></i></div>
         {#each designProjects as project} 
           <ProjectCard 
-            projectImg="projects/{project.img}"
+            projectImg="{project.img}"
             projectName={project.name}
             projectDescription={project.description}
             projectLink={project.link}

@@ -7,12 +7,21 @@
 
   let devSkills = [];
   let designSkills = [];
+
+  let latestDevelopmentProject = {};
+  let latestDesignProject = {};
   onMount(async () => {
-    const response = await fetch('/json/skills.json');
-    let skills = await response.json();
-    console.log(skills)
+    const skillResponse = await fetch('/json/skills.json');
+    let skills = await skillResponse.json();
+    // console.log(skills)
     devSkills = skills.filter(skill => skill.type === "development");
     designSkills = skills.filter(skill => skill.type === "design");
+
+    const projectResponse = await fetch('/json/projects.json');
+    let projects = await projectResponse.json();
+    latestDevelopmentProject = projects.filter(project => project.type === "development").at(-1);
+    latestDesignProject = projects.filter(project => project.type === "design").at(-1);
+    // console.log(latestDevelopmentProject)
   });
 
   let formName = "";
@@ -69,7 +78,10 @@
           <h4>Development</h4>
           <div class="flex flex-wrap">
             {#each devSkills as skill}
-              <img src="/images/skills/{skill.imgName}" alt="{skill.imgName}">
+              <div class="skills-skill">
+                <img src="/images/skills/{skill.imgName}" alt="{skill.imgName}">
+                <!-- <p>{skill.skill}</p> -->
+              </div>
             {/each}
           </div>
         </div>
@@ -77,7 +89,10 @@
           <h4>Design</h4>
           <div class="flex flex-wrap">
             {#each designSkills as skill}
+            <div class="skills-skill">
               <img src="/images/skills/{skill.imgName}" alt="{skill.imgName}">
+              <!-- <p>{skill.skill}</p> -->
+            </div>
             {/each}
           </div>
         </div>
@@ -94,7 +109,12 @@
         <section>
           <div><i class="icon-laptop3"></i></div>
           <div>
-            <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
+            <ProjectCard 
+              projectImg="{latestDevelopmentProject.img}"
+              projectName="{latestDevelopmentProject.name}"
+              projectDescription="{latestDevelopmentProject.description}" 
+              projectLink="{latestDevelopmentProject.link}" 
+            />
             <!-- link to projects -->
             <StarButton 
               bgColor="--light-background" 
@@ -111,7 +131,12 @@
         <section>
           <div><i class="icon-sketchbook3"></i></div>
           <div>
-            <ProjectCard projectImg="placeholder-thumbnail.jpeg" projectName="Development Project" projectDescription="Cool project I made this project you want to look yes" />
+            <ProjectCard 
+              projectImg={latestDesignProject.img} 
+              projectName={latestDesignProject.name} 
+              projectDescription={latestDesignProject.description} 
+              projectLink={latestDesignProject.link} 
+            />
             <!-- link to projects -->
             <StarButton 
               bgColor="--light-background" 
@@ -211,7 +236,19 @@
   }
 
   .skills h2, .projects h2, .about-me h2, .contact-me h2 {
-    margin-top: 1.4em;
+    margin-top: 2em;
+    
+    @include break(768px) {
+      margin-top: 1.4em;
+    }
+  }
+
+  .skills > :last-child, .projects > :last-child, .about-me > :last-child {
+    margin-bottom: -2em;
+    
+    @include break(768px) {
+      margin-bottom: 0;
+    }
   }
 
   .intro {
@@ -258,6 +295,17 @@
     h2 {
       color: var(--accent-one);
     }
+    &-skill {
+      color: var(--accent-one);
+      font-weight: bolder;
+      text-align: center;
+      margin-right: .8em;
+      margin-top: 1em;
+      @include break(768px) {
+        margin-right: 1em;
+        margin-top: 1.2em;
+      }
+    }
     &-icons {
       border: 6px solid var(--accent-one);
       border-radius: 25px;
@@ -266,9 +314,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
-      // div div {
-      //   // justify-content: space-between;
-      // }
+
       > div:first-child {
         @include break(640px) {
           margin-right: 1em;
@@ -281,12 +327,8 @@
       }
       img {
         width: 50px;
-        margin-right: .8em;
-        margin-top: 1em;
         @include break(768px) {
           width: 60px;
-          margin-right: 1em;
-          margin-top: 1.2em;
         }
       }
       h4 {

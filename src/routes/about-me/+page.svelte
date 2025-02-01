@@ -1,21 +1,21 @@
 <script>
   import Header from "../../components/Header.svelte";
-  import Quote from "../../components/Quote.svelte";
+  // import Quote from "../../components/Quote.svelte";
   import Footer from "../../components/Footer.svelte";
-  import { onMount } from "svelte";
+  // import { onMount } from "svelte";
 
-  let carouselQuotes = [];
-  onMount(async () => {
-    const response = await fetch('/json/quotes.json');
-    let quotes = await response.json();
-    console.log(quotes)
-    carouselQuotes = quotes;
-  });
+  // let carouselQuotes = [];
+  // onMount(async () => {
+  //   const response = await fetch('/json/quotes.json');
+  //   let quotes = await response.json();
+  //   console.log(quotes)
+  //   carouselQuotes = quotes;
+  // });
 	
-	let currIndex = 0
+	// let currIndex = 0
 	
-	const next = () => currIndex = (currIndex + 1) % carouselQuotes.length
-  const back = () => currIndex === 0 ? currIndex = carouselQuotes.length - 1 : currIndex = (currIndex - 1) % carouselQuotes.length;
+	// const next = () => currIndex = (currIndex + 1) % carouselQuotes.length
+  // const back = () => currIndex === 0 ? currIndex = carouselQuotes.length - 1 : currIndex = (currIndex - 1) % carouselQuotes.length;
 
 </script>
 
@@ -43,13 +43,12 @@
     </div>
   </div>
 
-  
-  <div class="flex justify-between">
+  <!-- quotes -->
+  <!-- <div class="flex justify-between">
     <button class="navigation-buttons" on:click={back}><p>&lt</p></button>
     {#if carouselQuotes.length}
       {#each carouselQuotes as quote, index}
         {#if index == currIndex}
-          <!-- {quote.quote} -->
           <Quote 
             quote={quote.quote}
             quoter={quote.quoter}
@@ -59,7 +58,7 @@
       {/each}
     {/if}
     <button class="navigation-buttons" on:click={next}><p>&gt</p></button>
-  </div>
+  </div> -->
 
 </main>
 <Footer />
@@ -102,17 +101,17 @@
     }
   }
 
-  .navigation-buttons {
-    display: inline-block;
-    // width: 100%;
-    margin: .6em 0;
-    p {
-      display: inline-block;
-      color: var(--accent-two);
-      // padding: .4em .8em;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 4em;
-    }
-  }
+  // .navigation-buttons {
+  //   display: inline-block;
+  //   // width: 100%;
+  //   margin: .6em 0;
+  //   p {
+  //     display: inline-block;
+  //     color: var(--accent-two);
+  //     // padding: .4em .8em;
+  //     border-radius: 10px;
+  //     font-weight: 700;
+  //     font-size: 4em;
+  //   }
+  // }
 </style>

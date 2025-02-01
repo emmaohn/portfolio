@@ -7,7 +7,7 @@
 
 <a href={projectLink} target="_blank">
   <div class="project-card">
-    <img src="/images/{projectImg}" alt="{projectName}">
+    <img src="/images/projects/{projectImg}" alt="{projectName}">
     <div class="project-card-description">
       <h5>{projectName}</h5>
       <p>{projectDescription}</p>
