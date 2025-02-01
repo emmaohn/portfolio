@@ -60,7 +60,7 @@
       <StarButton 
         bgColor="--accent-one" 
         textColor="--light-text"
-        smallAlign="center"
+        medAlign="left"
         href="" 
         content="See more"
       />
@@ -270,8 +270,16 @@
     }
     .pic-of-me  {
       margin: 1.6em;
-      max-width: 350px;
+      max-width: 325px;
       margin: 1.4em auto;
+      transition: all .45s;
+
+      @include break(768px) {
+        max-width: 270px;
+      }
+      @include break(1024px) {
+        max-width: 350px;
+      }
   
       .heart {
         font-size: 3em;

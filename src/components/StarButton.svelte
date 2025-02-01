@@ -1,8 +1,8 @@
 <script>
   export let bgColor = '--light-background';
   export let textColor = '--dark-text';
-  export let smallAlign = "left";
-  export let medAlign = "left";
+  export let smallAlign = "center";
+  export let medAlign;
   export let href = '';
   export let content = '';
 </script>
